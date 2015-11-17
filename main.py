@@ -4,4 +4,4 @@ g = Game()
 
 g.run()
 
-g.exit()
+#g.exit()
