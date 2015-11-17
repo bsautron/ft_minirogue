@@ -26,7 +26,6 @@ class Room ( Identity ) :
 			elif (pos == 4):
 				x = random.randint(self.x, self.x + self.size_x - 1)
 				y = self.y + self.size_y - 1
-
 			self.door.append(Door(x, y))
 
 	def renderRoom(self, window):

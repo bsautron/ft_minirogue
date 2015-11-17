@@ -15,10 +15,10 @@ class Map(Identity):
 		for i in range(5):
 			size_x = random.randint(10, 20)
 			size_y = random.randint(5, 10)
-			x = random.randint(2, self.size_x - size_x - 2)
-			y = random.randint(2, self.size_y - size_y - 2)
+			x = random.randint(10, self.size_x - size_x - 10)
+			y = random.randint(10, self.size_y - size_y - 10)
 			room = Room(x, y, size_x, size_y)
-			if not room.isInList(self.room):
+			if not room.isInList(self.room, 4):
 				self.room.append(room)
 
 	def connectRoom(self, room1, room2):
@@ -27,4 +27,6 @@ class Map(Identity):
 	def renderMap(self, window):
 		for i in range(len(self.room)):
 			self.room[i].renderRoom(window)
+		for i in range(len(self.corridor)):
+			self.corridor[i].renderCorridor(window)
 
